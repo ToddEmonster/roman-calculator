@@ -1,7 +1,9 @@
-window.onload = function () {
-    function greeter(person) {
-        return "Hello, " + person;
-    }
-    var user = "Jane User";
-    // document.body.textContent = greeter(user);
-};
+// Real calculator
+function sum(first, second) {
+    return first + second;
+}
+// HTML display
+// window.onload = function() {
+//     // document.body.textContent = greeter(user);
+// }
+module.exports = sum;
