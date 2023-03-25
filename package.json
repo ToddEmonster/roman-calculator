@@ -1,0 +1,30 @@
+{
+  "name": "roman-calculator",
+  "version": "1.0.0",
+  "description": "Implementation of kata to add roman numbers",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ToddEmonster/roman-calculator.git"
+  },
+  "keywords": [
+    "kata",
+    "roman",
+    "calculator"
+  ],
+  "author": "Todd RAHARIVELO",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/ToddEmonster/roman-calculator/issues"
+  },
+  "homepage": "https://github.com/ToddEmonster/roman-calculator#readme",
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}
