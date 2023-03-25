@@ -1,5 +1,5 @@
 // Real calculator
-function sum(first: number, second: number) {
+export function sum(first: number, second: number) {
     return first + second;
 }
 
@@ -7,5 +7,3 @@ function sum(first: number, second: number) {
 // window.onload = function() {
 //     // document.body.textContent = greeter(user);
 // }
-
-module.exports = sum;
