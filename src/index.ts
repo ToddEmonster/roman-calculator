@@ -1,21 +1,52 @@
 // HTML display
-import { sum } from './calculator';
+import { sum } from './sum';
 
+function eventHandler(event) {
+    if (event.type === "fullscreenchange") {
+      /* handle a full screen toggle */
+    } else {
+      /* handle a full screen toggle error */
+    }
+  }
+
+  
 window.onload = function() {
-    const firstNumber = document.getElementById("firstNumber");
-    const secondNumber = document.getElementById("secondNumber");
+    // Get DOM Elements
+    const firstNumberDom = document.getElementById("firstNumber") as HTMLInputElement;
+    const secondNumberDom = document.getElementById("secondNumber") as HTMLInputElement;
     const resultDiv = document.getElementById("result");
-    const button = document.getElementById("button");
+    const button = document.getElementById("button")  as HTMLInputElement;
 
-    // TODO check input content on first load
-    if (firstNumber.textContent !== "" && firstNumber.textContent !== "") {
-        (button as HTMLInputElement).disabled = false;
+    // Declare values variables
+    let firstNumberRoman: string;
+    let secondNumberRoman: string;
+    let firstNumberArabic: number;
+    let secondNumberArabic: number;
+    let resultArabic: number;
+    let resultRoman: string;
+
+    // Clean inputs and result
+    firstNumberDom.value = "";
+    secondNumberDom.value = "";
+    resultDiv.textContent = "";
+    button.disabled = true;
+
+    // TODO Upgrade into clean validation
+    if (firstNumberDom.value !== "" && secondNumberDom.value !== "") {
+        button.disabled = false;
     }
 
-    // TODO check input content on focus / on blur
+    // Input changes listeners
+    firstNumberDom.addEventListener("input", () => {
+        firstNumberRoman = firstNumberDom.value;
+        console.log(firstNumberRoman);
+    });
+    secondNumberDom.addEventListener("input", () => {
+        secondNumberRoman = secondNumberDom.value;
+        console.log(secondNumberRoman);
+    });
 
-    console.log("first : ", firstNumber.textContent);
-    console.log("second : ", secondNumber.textContent);
 
+    // Result display in DOM
     resultDiv.textContent = sum(1,2).toString();
 }
