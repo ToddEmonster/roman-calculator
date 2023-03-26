@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "webpack",
-    "start": "npx webpack -w",
+    "start": "npm run build && npx webpack -w",
     "test": "jest"
   },
   "repository": {

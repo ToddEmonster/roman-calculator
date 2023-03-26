@@ -3,11 +3,11 @@
 
 ## Now
 
-+ Write first test class
-+ Convert Roman>Arab
-+ Calculate button displays something onclick
-+ Calculate button displays result onclick 
-+ Restrain inputs
++ [x] Write first test class
++ [ ] Convert Roman>Arab
++ [ ] Calculate button displays something onclick
++ [ ] Calculate button displays result onclick 
++ [ ] Restrain inputs
 
 ## After
 
