@@ -1,7 +1,9 @@
 import { sum } from '../src/sum';
+import { convertRomanNumberToArabic } from '../src/roman-translator';
+import { InvalidRomanNumberError } from '../src/errors/InvalidRomanNumber';
 
-// TODELETE
-test('adds 1 + 2 to equal 3', () => {
+// Sum testing
+test('Adds 1 + 2 to equal 3', () => {
     expect(sum(1,2)).toBe(3);
 })
 
@@ -10,6 +12,13 @@ test('adds 1 + 2 to equal 3', () => {
 - Must be min 1 char
 - All char must be one of 7 sympols (regex)
  */
+
+test('Must not validate A', () => {
+    expect(() => {
+        convertRomanNumberToArabic("A")
+    }).toThrow(new InvalidRomanNumberError("A"));
+})
+
 
 /* TODO Test good translation roman -> arabic */
 

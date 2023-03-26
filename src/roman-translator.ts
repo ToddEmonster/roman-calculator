@@ -1,3 +1,4 @@
+import { InvalidRomanNumberError } from './errors/InvalidRomanNumber';
 /* 
 There are some rules to a Roman number:
 
@@ -7,4 +8,8 @@ There are some rules to a Roman number:
 + If the numeral is V, L or D you can’t have more than one (“D” + “D” = “M”)
 */
 
-// TODO
+// TODO must throw error
+export function convertRomanNumberToArabic(romanNumber: string): number {
+    throw new InvalidRomanNumberError(romanNumber);
+    //return 0;
+}
