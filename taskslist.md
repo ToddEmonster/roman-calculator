@@ -14,7 +14,7 @@
 + Implement other operators
 + Conversion Arab - Roman directly
 + Better configuration
-
++ Explain "The number 4,000 cannot be written in regular Roman numerals." ([vinculum](https://englishhistory.net/romans/roman-numerals/)) 
 
 
 ## Dreams

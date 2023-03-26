@@ -22,4 +22,16 @@ test('Must not validate A', () => {
 
 /* TODO Test good translation roman -> arabic */
 
+/* 
+console.log(isSmallerThan("I", "V")); // true
+console.log(isSmallerThan("V", "V")); // false 
+console.log(isSmallerThan("M", "V")); // false
+
+
+"DCCXCIXVV" => ["D", "C", "C", "XC", "IX", "V", "V"] => 799
+
+ */
+
 /* TODO Test good translation arabic -> roman */
+
+// TODO : Set special error for number > 4000
