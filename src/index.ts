@@ -16,7 +16,7 @@ function displayErrorMessage(inputDomElement: HTMLInputElement, position: number
     numberErrorContainer.classList.add('error', 'number-'+position);
     numberErrorContainer.appendChild(numberErrorContent);
 
-    inputDomElement.after(numberErrorContainer);
+    inputDomElement.parentNode.append(numberErrorContainer);
   }
 }
 
