@@ -11,13 +11,13 @@
 
 ## After
 
-+ Implement other operators
-+ Conversion Arab - Roman directly displayed
-+ Better configuration
-+ Explain "The number 4,000 cannot be written in regular Roman numerals." ([vinculum](https://englishhistory.net/romans/roman-numerals/)) 
++ [ ] Implement other operators
++ [ ] Conversion Arab - Roman directly displayed
++ [ ] Better configuration
++ [ ] Explain "The number 4,000 cannot be written in regular Roman numerals." ([vinculum](https://englishhistory.net/romans/roman-numerals/)) 
 
 
 ## Dreams
 
-+ French translation
-+ favicon.io
++ [ ] French translation
++ [x] favicon.io
