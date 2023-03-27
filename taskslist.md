@@ -1,23 +1,29 @@
 # Tasklist
 
+## Should
 
-## Now
++ [ ] More testing
++ [ ] Separate empty input with invalid input cases for errors
++ [ ] Restrain inputs to uppercase only
++ [ ] Restrain inputs to the seven symbols only
+
+## Would be nice
+
++ [ ] Implement other operators (?)
++ [ ] Better configuration
+
+## Would be overkill
+
++ [ ] French translation
++ [ ] Fancy latin-like font
++ [ ] Sass use
+
+## Done
 
 + [x] Write first test class
 + [x] Convert Roman>Arab
-+ [ ] Calculate button displays something onclick
-+ [ ] Calculate button displays result onclick 
-+ [ ] Restrain inputs
-
-## After
-
-+ [ ] Implement other operators
-+ [ ] Conversion Arab - Roman directly displayed
-+ [ ] Better configuration
-+ [ ] Explain "The number 4,000 cannot be written in regular Roman numerals." ([vinculum](https://englishhistory.net/romans/roman-numerals/)) 
-
-
-## Dreams
-
-+ [ ] French translation
++ [x] Calculate button displays something onclick
++ [x] Calculate button displays result onclick 
 + [x] favicon.io
++ [x] Explain "The number 4,000 cannot be written in regular Roman numerals." ([vinculum](https://englishhistory.net/romans/roman-numerals/)) 
++ [x] Conversion Arab - Roman directly displayed
