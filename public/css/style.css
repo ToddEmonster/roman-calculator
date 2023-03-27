@@ -51,7 +51,8 @@ div, span, p, label, button, a {
     justify-content: center;
     margin: 1rem 0;
 }
-#result-content {
+
+#resultContent {
     display: inline-block;
     margin: 0 2rem;
     min-width: 20rem;

@@ -1,47 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <link rel="stylesheet" href="./public/css/reset.css">
-    <link rel="stylesheet" href="./public/css/base.css">
-    <link rel="stylesheet" href="./public/css/style.css">
-    <link rel="icon" type="image/x-icon" href="./public/img/icons8-musée-color-96.png">
-    <title>Roman Calculator</title>
-</head>
-<body>
-    <div class="page-container">
-        <section class="main-content container">
-            <h1>Roman calculator</h1>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+        <link rel="stylesheet" href="./public/css/reset.css">
+        <link rel="stylesheet" href="./public/css/base.css">
+        <link rel="stylesheet" href="./public/css/style.css">
+        <link rel="icon" type="image/x-icon" href="./public/img/icons8-musée-color-96.png">
+        <title>Roman Calculator</title>
+    </head>
+    <body>
+        <div class="page-container">
+            <section class="main-content container">
+                <h1>Roman calculator</h1>
 
-            <div class="explanation">
-                This tool will allow you to add two Roman numbers together
-            </div>
-
-            <form class="calculator-form">
-                <div>
-                    <label for="firstNumber">Enter first Roman number :</label>
-                    <input type="text" id="firstNumber" name="firstNumber">
+                <div class="explanation">
+                    This tool will allow you to add two Roman numbers together
                 </div>
-                <div>
-                    <label for="secondNumber">Enter second Roman number :</label>
-                    <input type="text" id="secondNumber" name="secondNumber">
+
+                <form class="calculator-form">
+                    <div>
+                        <label for="firstNumber">Enter first Roman number :</label>
+                        <input type="text" id="firstNumber" name="firstNumber">
+                    </div>
+                    <div>
+                        <label for="secondNumber">Enter second Roman number :</label>
+                        <input type="text" id="secondNumber" name="secondNumber">
+                    </div>
+                    <button id="button">Calculate</button>
+                </form>
+
+                <div class="result-container">
+                    <span>Result :</span>
+                    <span id="resultContent"></span>
                 </div>
-                <button id="button">Calculate</button>
-            </form>
+            </section>
 
-            <div class="result-container">
-                <span>Result :</span>
-                <span id="result-content"></span>
-            </div>
-        </section>
+            <footer class="footer container">
+                <p>Favicon : <a target="_blank" href="https://icons8.com/icon/17605/mus%C3%A9e">Musée</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a></p>
+            </footer>
+        </div>
 
-        <footer class="footer container">
-            <p>Favicon : <a target="_blank" href="https://icons8.com/icon/17605/mus%C3%A9e">Musée</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a></p>
-        </footer>
-    </div>
-
-    <script type="module" src="./public/main-bundle.js"></script>
-</body>
+        <script type="module" src="./public/main-bundle.js"></script>
+    </body>
 </html>
