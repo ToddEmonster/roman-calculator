@@ -4,27 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="icon" type="image/x-icon" href="./img/icons8-musée-color-96.png">
+    <link rel="icon" type="image/x-icon" href="./assets/img/icons8-musée-color-96.png">
     <title>Roman Calculator</title>
 </head>
 <body>
+    <main class="main-page">
+        <h1 class="page-title">Roman calculator</h1>
 
-    <h1>Roman calculator</h1>
+        <div class="input-block">
+            <label for="firstNumber">Enter first Roman number :</label>
+            <input type="text" id="firstNumber" name="firstNumber">
+        </div>
 
-    <p>Enter first Roman number :</p>
-    <input type="text" id="firstNumber">
+        <br />
+        <div class="input-block">
+            <label for="secondNumber">Enter second Roman number :</label>
+            <input type="text" id="secondNumber" name="secondNumber">
+        </div>
 
-    <p></p>Enter second Roman number :</p>
-    <input type="text" id="secondNumber">
+        <br />
+        <button id="button">Calculate</button>
 
-    <br /><br />
-    <button id="button">Calculate</button>
+        <p>Result : <span id="result"></span></p>
 
-    <p> Result : </p>
-    <p id="result"></p>
-
-    <script type="module" src="./main-bundle.js"></script>
+        <script type="module" src="./main-bundle.js"></script>
+    </main>
     <footer>
         <p>Favicon : <a target="_blank" href="https://icons8.com/icon/17605/mus%C3%A9e">Musée</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a></p>
     </footer>

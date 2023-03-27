@@ -1,0 +1,72 @@
+@import 'variables';
+
+// /*********************
+// BREAKPOINTS
+// *********************/
+
+@mixin mediaGreaterThan($breakpoint) {
+    @media screen and (min-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin mediaSmallerThan($breakpoint) {
+    @media screen and (max-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin media($smallest-point, $biggest-point) {
+    @media screen and (min-width: $smallest-point) and (max-width: $biggest-point) {
+            @content;
+        }
+}
+
+// @mixin breakpoint($point) {
+//     @if $point == large {
+//       @media screen and (min-width: $large) { @content ; }
+//    }
+//    @else if $point == desktop {
+//     @media screen and (min-width: $desktop) { @content ; }
+//  }
+//      @else if $point == tablet {
+//       @media screen and (min-width: $tablet) { @content ; }
+//    }
+//     @else if $point == phone {
+//       @media screen and (min-width: $phone)  { @content ; }
+//    }
+//    @else if $point == xs {
+//       @media screen and (max-width: $xs)  { @content ; }
+//    }
+// }
+
+
+// /*********************
+// TYPOGRAPHY
+// *********************/
+@mixin typo-size__title($size) {
+    @if $size == xl {
+        font-size: $fz-xl__title;
+    }
+    @else if $size == large {
+        font-size: $fz-large__title;
+    }
+    @else if $size == medium {
+        font-size: $fz-medium__title;
+    }
+}
+
+@mixin typo-size__content($size) {
+    @if $size == xl {
+        font-size: $fz-xl__content;
+        line-height: $lh-xl;
+    }
+    @else if $size == large {
+        font-size: $fz-large__content;
+        line-height: $lh-large;    
+    }
+    @else if $size == medium {
+        font-size: $fz-medium__content;
+        line-height: $lh-medium;    
+    }
+}

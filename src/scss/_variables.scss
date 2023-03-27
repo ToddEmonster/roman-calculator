@@ -1,0 +1,40 @@
+$base-color: #FD7E37;
+
+$xs: 320px;
+$small: 640px;
+$medium: 1007px;
+$large: 1450px;
+$xl: 1920px;
+
+$fz-xl__title: 4.8rem;
+$fz-xl__content: 2rem;
+$lh-xl: 3rem;
+
+$fz-large__title: 4rem;
+$fz-large__content: 1.8rem;
+$lh-large: 3rem;
+
+$fz-medium__title: 2.4rem;
+$fz-medium__content: 1.6rem;
+$lh-medium: 2.5rem;
+
+// $fz-small__title: 4.6rem;
+// $fz-small__content: 2rem;
+// $lh-small: 2rem;
+
+
+/*  OLD CATEGORIES */
+// $xs: 320px;
+// $phone: 640px; // x1136
+// $tablet: 768px; // x1024
+// $laptop: 960px;
+// $desktop: 1024px;
+// $large: 1200px;
+// $max: 1920px;
+
+$breakpoints: (
+    xs: 320px,
+    phone: 640px, 
+    tablet: 768px, 
+    desktop: 1024px,
+    large: 1200px) !default; // RACO éventuellement

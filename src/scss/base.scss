@@ -1,0 +1,52 @@
+html {
+    font-size: 62.5%; /* Sets up the Base 10 stuff */
+}
+
+a:hover {
+    text-decoration: underline;
+  }
+  
+  .page-container {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    
+    .container {
+      // margin-left: auto !important;
+      // margin-right: auto !important;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+    
+    .main-content {
+      flex-grow: 2;
+    }
+    
+    @include mediaGreaterThan($small) {
+      .container {
+        padding-left: 4rem;
+        padding-right: 4rem;
+      }
+    }
+    
+    @include mediaGreaterThan($medium) {
+      .container {
+        padding-left: 8rem;
+        padding-right: 8rem;
+      }
+    }
+    
+    @include mediaGreaterThan($large) {
+      .container {
+        padding-left: 20rem;
+        padding-right: 20rem;
+      }
+    }
+    
+    @include mediaGreaterThan($xl) {
+      .container {
+          padding-left: 32rem;
+          padding-right: 32rem;
+      }
+    }
