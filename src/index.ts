@@ -1,15 +1,14 @@
+import { convertArabicNumberToRoman, convertRomanNumberToArabic } from './converter';
 import { isValidRomanNumber } from './utils';
 
 /**
- * Check if the input value is a valid roman number and return a boolean. 
- * Displays an error message if it's invalid
+ * Displays an error message in the DOM for the input.
  * @param inputDomElement   The input DOM Element 
  * @param position          The position of the input in the list of all inputs (starting at 1)
  */
-function isInputValid(inputDomElement: HTMLInputElement, position: number = 1): boolean {
-  if (!isValidRomanNumber(inputDomElement.value)) {
-    // Check if there is already an error message
-    if (document.getElementsByClassName("error number-"+position).length == 0) {
+function displayErrorMessage(inputDomElement: HTMLInputElement, position: number) {
+  // Check if there is already an error message
+  if (document.getElementsByClassName("error number-"+position).length == 0) {
 
     // Display an error message below the input
     const numberErrorContainer = document.createElement("p");
@@ -18,15 +17,17 @@ function isInputValid(inputDomElement: HTMLInputElement, position: number = 1): 
     numberErrorContainer.appendChild(numberErrorContent);
 
     inputDomElement.after(numberErrorContainer);
-    }
-    return false;
-  } else {
-    // Remove error message
-    const errorContainer = document.getElementsByClassName("error number-"+position)[0];
-    if (typeof errorContainer !== "undefined") errorContainer.parentNode.removeChild(errorContainer);
-
-    return true;
   }
+}
+
+/**
+ * Removes an error message in the DOM for the input.
+ * @param position  The position of the input in the list of all inputs (starting at 1)
+ */
+function removeErrorMessage(position: number) {
+  const presentErrorContainer = document.getElementsByClassName("error number-"+position)[0];
+  if (typeof presentErrorContainer !== "undefined") 
+    presentErrorContainer.parentNode.removeChild(presentErrorContainer);
 }
 
 window.onload = function() {
@@ -36,21 +37,10 @@ window.onload = function() {
     const secondNumberDom = document.getElementById("secondNumber") as HTMLInputElement;
     const resultDiv = document.getElementById("result");
     const button = document.getElementById("button")  as HTMLInputElement;
-
-    // TODO Create DOM Elements (for errors)  
-    const firstNumberErrorDiv = document.createElement("div");
-    const secondNumberErrorDiv = document.createElement("div");
-    const numberErrorContent = document.createTextNode("This is not a valid Roman Number");
-    firstNumberErrorDiv.appendChild(numberErrorContent);
-    secondNumberErrorDiv.appendChild(numberErrorContent);
-
-    // Declare values variables
-    let firstNumberRoman: string;
-    let secondNumberRoman: string;
+  
+    // Declare variables
     let firstNumberArabic: number;
     let secondNumberArabic: number;
-    let resultArabic: number;
-    let resultRoman: string;
 
     // Clean inputs and result
     firstNumberDom.value = "";
@@ -60,22 +50,34 @@ window.onload = function() {
 
     // Input changes listeners
     firstNumberDom.addEventListener("input", () => {
-      if (!isInputValid(firstNumberDom, 1)) {
+      if (!isValidRomanNumber(firstNumberDom.value)) {
+        displayErrorMessage(firstNumberDom, 1)
+        firstNumberArabic = NaN;
         button.disabled = true;
       } else {
-        button.disabled = false;
+        removeErrorMessage(1);
+        firstNumberArabic = convertRomanNumberToArabic(firstNumberDom.value);
+        button.disabled = !isValidRomanNumber(secondNumberDom.value);
       }
     });
 
     secondNumberDom.addEventListener("input", () => {
-        if (!isInputValid(secondNumberDom, 2)) {
+        if (!isValidRomanNumber(secondNumberDom.value)) {
+          displayErrorMessage(secondNumberDom, 2)
+          secondNumberArabic = NaN;
           button.disabled = true;
         } else {
-          button.disabled = false;
+          removeErrorMessage(2);
+          secondNumberArabic = convertRomanNumberToArabic(secondNumberDom.value);
+          button.disabled = !isValidRomanNumber(firstNumberDom.value);
         }
     });
 
-
-    // Result display in DOM
-    resultDiv.textContent = "result here2 ";
+    // Listen to button click
+    button.onclick = () => {
+      if (!button.disabled) {
+        const resultArabic: number = firstNumberArabic + secondNumberArabic;
+        resultDiv.textContent = convertArabicNumberToRoman(resultArabic);
+      }
+    }
 }
