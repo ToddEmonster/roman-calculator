@@ -50,6 +50,14 @@ button {
     margin: 1rem 0;
 }
 
+.hint {
+    margin-left: 1rem;
+    padding: .5rem 2rem;
+    font-style: italic;
+    color: grey;
+    background-color: whitesmoke;
+}
+
 .result-container {
     display: flex;
     justify-content: center;

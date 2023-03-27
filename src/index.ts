@@ -35,7 +35,10 @@ window.onload = function() {
     // Get DOM Elements
     const firstNumberDom = document.getElementById("firstNumber") as HTMLInputElement;
     const secondNumberDom = document.getElementById("secondNumber") as HTMLInputElement;
+    const firstNumberArabicDom = document.getElementById("hintFirstNumber");
+    const secondNumberArabicDom = document.getElementById("hintSecondNumber");
     const resultDom = document.getElementById("resultContent");
+    const resultArabicDom = document.getElementById("hintResult");
     const button = document.getElementById("button")  as HTMLInputElement;
   
     // Declare variables
@@ -45,7 +48,10 @@ window.onload = function() {
     // Clean inputs and result
     firstNumberDom.value = "";
     secondNumberDom.value = "";
+    firstNumberArabicDom.textContent = "";
+    secondNumberArabicDom.textContent = "";
     resultDom.textContent = "";
+    resultArabicDom.textContent = "";
     button.disabled = true;
 
     // Input changes listeners
@@ -53,10 +59,14 @@ window.onload = function() {
       if (!isValidRomanNumber(firstNumberDom.value)) {
         displayErrorMessage(firstNumberDom, 1)
         firstNumberArabic = NaN;
+        firstNumberArabicDom.textContent = "";
+        resultDom.textContent = "";
+        resultArabicDom.textContent = "";
         button.disabled = true;
       } else {
         removeErrorMessage(1);
         firstNumberArabic = convertRomanNumberToArabic(firstNumberDom.value);
+        firstNumberArabicDom.textContent = firstNumberArabic.toString();
         button.disabled = !isValidRomanNumber(secondNumberDom.value);
       }
     });
@@ -65,19 +75,25 @@ window.onload = function() {
         if (!isValidRomanNumber(secondNumberDom.value)) {
           displayErrorMessage(secondNumberDom, 2)
           secondNumberArabic = NaN;
+          secondNumberArabicDom.textContent = "";
+          resultDom.textContent = "";
+          resultArabicDom.textContent = "";
           button.disabled = true;
         } else {
           removeErrorMessage(2);
           secondNumberArabic = convertRomanNumberToArabic(secondNumberDom.value);
+          secondNumberArabicDom.textContent = secondNumberArabic.toString();
           button.disabled = !isValidRomanNumber(firstNumberDom.value);
         }
     });
 
     // Listen to button click
-    button.onclick = () => {
+    button.onclick = (event: Event) => {
+      event.preventDefault(); // Preventa auto-reload after one click
       if (!button.disabled) {
         const resultArabic: number = firstNumberArabic + secondNumberArabic;
         resultDom.textContent = convertArabicNumberToRoman(resultArabic);
+        resultArabicDom.textContent = resultArabic.toString();
       }
     }
 }

@@ -16,17 +16,21 @@
                 <h1>Roman calculator</h1>
 
                 <div class="explanation">
-                    This tool will allow you to add two Roman numbers together
+                    This tool will allow you to add two Roman numbers together :-)
+                    <br />
+                    <a target=”_blank” href="https://englishhistory.net/romans/roman-numerals/">For technical reasons</a>, only numbers between I (1) and 3999 (MMMCMXCIX) included will be accepted.
                 </div>
 
                 <form class="calculator-form">
                     <div>
                         <label for="firstNumber">Enter first Roman number :</label>
                         <input type="text" id="firstNumber" name="firstNumber">
+                        <span class="hint">( <span id="hintFirstNumber"></span> )</span>
                     </div>
                     <div>
                         <label for="secondNumber">Enter second Roman number :</label>
                         <input type="text" id="secondNumber" name="secondNumber">
+                        <span class="hint">( <span id="hintSecondNumber"></span> )</span>
                     </div>
                     <button id="button">Calculate</button>
                 </form>
@@ -34,6 +38,7 @@
                 <div class="result-container">
                     <span>Result :</span>
                     <span id="resultContent"></span>
+                    <span class="hint">( <span id="hintResult"></span> )</span>
                 </div>
             </section>
 
