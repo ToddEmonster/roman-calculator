@@ -1,4 +1,4 @@
-// HTML display
+import { isValidRomanNumber } from './utils';
 
 function eventHandler(event) {
     if (event.type === "fullscreenchange") {
@@ -31,7 +31,8 @@ window.onload = function() {
     button.disabled = true;
 
     // TODO Upgrade into clean validation
-    if (firstNumberDom.value !== "" && secondNumberDom.value !== "") {
+    if (!isValidRomanNumber(firstNumberDom.value) && 
+        !isValidRomanNumber(secondNumberDom.value) ) {
         button.disabled = false;
     }
 
@@ -47,5 +48,5 @@ window.onload = function() {
 
 
     // Result display in DOM
-    resultDiv.textContent = "result here";
+    resultDiv.textContent = "result here2 ";
 }
