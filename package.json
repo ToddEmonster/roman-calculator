@@ -8,6 +8,7 @@
   },
   "scripts": {
     "build": "webpack",
+    "serve": "npx webpack serve --open",
     "start": "npm run build && npx webpack -w",
     "test": "jest"
   },
@@ -33,7 +34,8 @@
     "ts-loader": "^9.4.2",
     "typescript": "^5.0.2",
     "webpack": "^5.76.3",
-    "webpack-cli": "^5.0.1"
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.13.1"
   },
   "dependencies": {
     "requirejs": "^2.3.6"

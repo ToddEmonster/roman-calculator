@@ -1,5 +1,4 @@
 // HTML display
-import { sum } from './sum';
 
 function eventHandler(event) {
     if (event.type === "fullscreenchange") {
@@ -48,5 +47,5 @@ window.onload = function() {
 
 
     // Result display in DOM
-    resultDiv.textContent = sum(1,2).toString();
+    resultDiv.textContent = "result here";
 }
