@@ -35,7 +35,7 @@ window.onload = function() {
     // Get DOM Elements
     const firstNumberDom = document.getElementById("firstNumber") as HTMLInputElement;
     const secondNumberDom = document.getElementById("secondNumber") as HTMLInputElement;
-    const resultDiv = document.getElementById("result");
+    const resultDiv = document.getElementById("result-content");
     const button = document.getElementById("button")  as HTMLInputElement;
   
     // Declare variables
