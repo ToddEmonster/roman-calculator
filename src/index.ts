@@ -35,7 +35,7 @@ window.onload = function() {
     // Get DOM Elements
     const firstNumberDom = document.getElementById("firstNumber") as HTMLInputElement;
     const secondNumberDom = document.getElementById("secondNumber") as HTMLInputElement;
-    const resultDiv = document.getElementById("resultContent");
+    const resultDom = document.getElementById("resultContent");
     const button = document.getElementById("button")  as HTMLInputElement;
   
     // Declare variables
@@ -45,7 +45,7 @@ window.onload = function() {
     // Clean inputs and result
     firstNumberDom.value = "";
     secondNumberDom.value = "";
-    resultDiv.textContent = "";
+    resultDom.textContent = "";
     button.disabled = true;
 
     // Input changes listeners
@@ -77,7 +77,7 @@ window.onload = function() {
     button.onclick = () => {
       if (!button.disabled) {
         const resultArabic: number = firstNumberArabic + secondNumberArabic;
-        resultDiv.textContent = convertArabicNumberToRoman(resultArabic);
+        resultDom.textContent = convertArabicNumberToRoman(resultArabic);
       }
     }
 }
