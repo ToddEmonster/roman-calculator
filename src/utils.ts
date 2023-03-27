@@ -1,3 +1,5 @@
+import { RomanSymbol } from './roman-symbol';
+
 /* Constants */
 export const validRomanSymbolsRegex = new RegExp("^[IVXLCDM]+$", "i"); // Also checks that the string is not empty 
 export const invalidMoreThanThreeRegex = new RegExp("(?:I{4,}|X{4,}|C{4,}|M{4,})"); // TOCHECK
@@ -11,12 +13,9 @@ export const invalidMoreThanOneRegex = new RegExp("(?:V{2,}|L{2,}|D{2,})"); // T
  * @param romanNumber a Roman number
  */
 export function isValidRomanNumber(romanNumber: string): boolean {
-    if (!validRomanSymbolsRegex.test(romanNumber) || 
-        invalidMoreThanThreeRegex.test(romanNumber) || 
-        invalidMoreThanOneRegex.test(romanNumber) )
-        return false;
-
-    return true;
+    return validRomanSymbolsRegex.test(romanNumber) &&
+        !invalidMoreThanThreeRegex.test(romanNumber) &&
+        !invalidMoreThanOneRegex.test(romanNumber);
 }
 
 /**

@@ -1,4 +1,5 @@
 import { InvalidRomanNumberError } from './errors/InvalidRomanNumber';
+import { RomanSymbol } from './roman-symbol';
 import { isValidRomanNumber, isFirstRomanSymbolSmallerThanSecond, getSpecificDigitFromArabicNumber } from './utils';
 
 /**
@@ -62,7 +63,7 @@ export function convertRomanNumberToArabic(romanNumber: string): number {
  * Only works up to 3999.
  * @param arabicNumber  input number (Arabic)
  */
-function convertArabicNumberToRoman(arabicNumber: number): string {
+export function convertArabicNumberToRoman(arabicNumber: number): string {
     let romanNumber: string = "";
 
     for (let digitColumn = 1000; digitColumn >= 1 ; digitColumn /= 10) {
