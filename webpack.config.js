@@ -7,7 +7,7 @@ module.exports = {
     main: "./src/index.ts",
   },
   output: {
-    path: path.resolve(__dirname, './public'),
+    path: path.resolve(__dirname, './docs'), // Equivalent to dist/build/public, "docs" for GitHub Pages publication
     filename: "[name]-bundle.js", // <--- Will be compiled to this single file
     publicPath: '/'
   },
@@ -24,7 +24,7 @@ module.exports = {
   },
   devServer: {
     static: {
-      directory: path.join(__dirname, 'public'),
+      directory: path.join(__dirname, 'docs'),
     },
     compress: true,
     port: 9000,
