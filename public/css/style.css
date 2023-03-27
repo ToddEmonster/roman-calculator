@@ -1,0 +1,32 @@
+h1 {
+    font-size: 4.8rem;
+}
+
+p {
+    font-size: 2rem;
+}
+
+.error {
+    color: red;
+    font-style: italic;
+}
+
+
+/** FOOTER */
+.footer {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+    background-color: ghostwhite;
+    color: dimgray;
+}
+
+.footer a, a:visited {
+    color: inherit;
+}
