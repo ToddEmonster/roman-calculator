@@ -1,7 +1,8 @@
 import { RomanSymbol } from './roman-symbol';
 
 /* Constants */
-export const validRomanSymbolsRegex = new RegExp("^[IVXLCDM]+$", "i"); // Also checks that the string is not empty 
+// https://regex101.com/r/Xg4x3L/1 (delete : https://regex101.com/delete/pETuAcVIjplUymulU0zXekLV)
+export const validRomanSymbolsRegex = new RegExp('^[IVXLCDM]+[^\s]*[IVXLCDM]*$');
 export const invalidMoreThanThreeRegex = new RegExp("(?:I{4,}|X{4,}|C{4,}|M{4,})"); // TOCHECK
 export const invalidMoreThanOneRegex = new RegExp("(?:V{2,}|L{2,}|D{2,})"); // TOCHECK
 
