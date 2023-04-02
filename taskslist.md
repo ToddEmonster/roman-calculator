@@ -2,10 +2,11 @@
 
 ## Should
 
-+ [ ] More testing
 + [ ] Separate empty input with invalid input cases for errors
++ [ ] More testing
 + [ ] Restrain inputs to uppercase only
 + [ ] Restrain inputs to the seven symbols only
++ [ ] Prevent invalid numbers following Roman grammar, such as "IIIM"
 
 ## Would be nice
 
