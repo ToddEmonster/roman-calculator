@@ -5,9 +5,9 @@ import { isValidRomanNumber, isFirstRomanSymbolSmallerThanSecond, getSpecificDig
 /**
  * Converts the value of an Arabic number as a Roman number following the specific digit column : units, tens, hundreds or thousands.
  * @param arabicNumber  input number (Arabic)
- * @param digitColumn   digit of interest
+ * @param digitColumn   digit column of interest : 1 || 10 || 100 || 1000
  */
-function getRomanNotationByDigitColumn(arabicNumber: number, digitColumn: number): string {
+export function getRomanNotationByDigitColumn(arabicNumber: number, digitColumn: number): string {
     let oneSymbol = RomanSymbol[1*digitColumn];
     let fiveSymbol = RomanSymbol[5*digitColumn];
     let nextColumnSymbol = RomanSymbol[10*digitColumn];
@@ -37,17 +37,17 @@ function getRomanNotationByDigitColumn(arabicNumber: number, digitColumn: number
 /**
  * Converts Roman number into Arabic notation.
  * Only works up to 3999 (MMMCMXCIX).
- * @param romanNumber   input Roman number
+ * @param romanNumberInput   input Roman number
  */
-export function convertRomanNumberToArabic(romanNumber: string): number {
-    if (!isValidRomanNumber(romanNumber)) {
-        throw new InvalidRomanNumberError(romanNumber);
+export function convertRomanNumberToArabic(romanNumberInput: string): number {
+    if (!isValidRomanNumber(romanNumberInput)) {
+        throw new InvalidRomanNumberError(romanNumberInput);
     }
 
     let result = 0;
-    for (let i=0; i < romanNumber.length; i++) {
-        const currentSymbol = romanNumber[i];
-        const nextSymbol = romanNumber[i+1];
+    for (let i=0; i < romanNumberInput.length; i++) {
+        const currentSymbol = romanNumberInput[i];
+        const nextSymbol = romanNumberInput[i+1];
 
         // Group with digit smaller than the next one means substraction
         result += isFirstRomanSymbolSmallerThanSecond(currentSymbol,nextSymbol) 
