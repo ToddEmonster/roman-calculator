@@ -10,7 +10,8 @@
     "build": "webpack",
     "serve": "npm run build && npx webpack serve --open",
     "start": "npm run build && npx webpack -w",
-    "test": "jest"
+    "test": "jest",
+    "coverage": "npx jest --coverage"
   },
   "repository": {
     "type": "git",
