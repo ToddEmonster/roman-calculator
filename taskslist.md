@@ -2,7 +2,7 @@
 
 ## Should
 
-+ [ ] Separate empty input with invalid input cases for errors
++ [ ] Handle case result > 3999
 + [ ] More testing
 + [ ] Restrain inputs to uppercase only
 + [ ] Restrain inputs to the seven symbols only
@@ -28,3 +28,4 @@
 + [x] favicon.io
 + [x] Explain "The number 4,000 cannot be written in regular Roman numerals." ([vinculum](https://englishhistory.net/romans/roman-numerals/)) 
 + [x] Conversion Arab - Roman directly displayed
++ [x] Separate empty input with invalid input cases for errors
