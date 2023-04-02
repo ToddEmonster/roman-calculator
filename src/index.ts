@@ -1,5 +1,5 @@
 import { convertArabicNumberToRoman, convertRomanNumberToArabic } from './converter';
-import { isValidRomanNumber } from './utils';
+import { isValidRomanNumber, ROMAN_NOTATION_LIMIT } from './utils';
 
 /**
  * Displays an error message in the DOM for the input.
@@ -104,8 +104,12 @@ window.onload = function() {
       event.preventDefault(); // Preventa auto-reload after one click
       if (!button.disabled) {
         const resultArabic: number = firstNumberArabic + secondNumberArabic;
-        resultDom.textContent = convertArabicNumberToRoman(resultArabic);
         resultArabicDom.textContent = resultArabic.toString();
+
+        if (resultArabic > ROMAN_NOTATION_LIMIT) {
+          resultDom.textContent = "Sorry, the number cannot be displayed : it is superior to 3999 :/";
+        } else {
+        resultDom.textContent = convertArabicNumberToRoman(resultArabic);}
       }
     }
 }

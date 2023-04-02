@@ -2,10 +2,7 @@
 
 ## Should
 
-+ [ ] Handle case result > 3999
 + [ ] More testing
-+ [ ] Restrain inputs to uppercase only
-+ [ ] Restrain inputs to the seven symbols only
 + [ ] Prevent invalid numbers following Roman grammar, such as "IIIM"
 
 ## Would be nice
@@ -29,3 +26,9 @@
 + [x] Explain "The number 4,000 cannot be written in regular Roman numerals." ([vinculum](https://englishhistory.net/romans/roman-numerals/)) 
 + [x] Conversion Arab - Roman directly displayed
 + [x] Separate empty input with invalid input cases for errors
++ [x] Handle case result > 3999
+
+## Deleted
+
++ ~~[ ] Restrain inputs to uppercase only~~
++ ~~[ ] Restrain inputs to the seven symbols only~~

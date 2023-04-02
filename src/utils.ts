@@ -1,5 +1,7 @@
 import { RomanSymbol } from './roman-symbol';
 
+export const ROMAN_NOTATION_LIMIT = 3999;
+
 /* Constants */
 // https://regex101.com/r/Xg4x3L/1 (delete : https://regex101.com/delete/pETuAcVIjplUymulU0zXekLV)
 export const validRomanSymbolsRegex = new RegExp('^[IVXLCDM]+$');
