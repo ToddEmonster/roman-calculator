@@ -24,12 +24,16 @@
                 <form class="calculator-form">
                     <div>
                         <label for="firstNumber">Enter first Roman number :</label>
-                        <input type="text" id="firstNumber" name="firstNumber">
+                        <input type="text" id="firstNumber" name="firstNumber" 
+                            pattern="[IVXLCDM]"
+                            onkeypress="return event.charCode != 32">
                         <span class="hint">( <span id="hintFirstNumber"></span> )</span>
                     </div>
                     <div>
                         <label for="secondNumber">Enter second Roman number :</label>
-                        <input type="text" id="secondNumber" name="secondNumber">
+                        <input type="text" id="secondNumber" name="secondNumber" 
+                            pattern="[IVXLCDM]"
+                            onkeypress="return event.charCode != 32">
                         <span class="hint">( <span id="hintSecondNumber"></span> )</span>
                     </div>
                     <button id="button">Calculate</button>
