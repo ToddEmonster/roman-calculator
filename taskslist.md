@@ -2,7 +2,6 @@
 
 ## Should
 
-+ [ ] More testing
 + [ ] Prevent invalid numbers following Roman grammar, such as "IIIM"
 
 ## Would be nice
@@ -27,6 +26,7 @@
 + [x] Conversion Arab - Roman directly displayed
 + [x] Separate empty input with invalid input cases for errors
 + [x] Handle case result > 3999
++ [x] More testing
 
 ## Deleted
 
