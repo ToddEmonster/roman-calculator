@@ -1,16 +1,27 @@
-import { InvalidRomanNumberError } from './errors/InvalidRomanNumber';
+import { InvalidRomanNumberError } from './errors/InvalidRomanNumberError';
+import { ReachMaxRomanNumberError } from './errors/ReachMaxRomanNumberError';
+import { DigitColumn, digitColumnsValues } from './digit-column';
 import { RomanSymbol } from './roman-symbol';
-import { isValidRomanNumber, isFirstRomanSymbolSmallerThanSecond, getSpecificDigitFromArabicNumber } from './utils';
+import { 
+    getSpecificDigitFromArabicNumber,
+    isValidRomanNumber, 
+    isFirstRomanSymbolSmallerThanSecond,
+    ROMAN_NOTATION_LIMIT
+} from './utils';
 
 /**
  * Converts the value of an Arabic number as a Roman number following the specific digit column : units, tens, hundreds or thousands.
  * @param arabicNumber  input number (Arabic)
  * @param digitColumn   digit column of interest : 1 || 10 || 100 || 1000
  */
-export function getRomanNotationByDigitColumn(arabicNumber: number, digitColumn: number): string {
+export function getRomanNotationByDigitColumn(arabicNumber: number, digitColumn: DigitColumn): string {
     let oneSymbol = RomanSymbol[1*digitColumn];
     let fiveSymbol = RomanSymbol[5*digitColumn];
     let nextColumnSymbol = RomanSymbol[10*digitColumn];
+
+    if (digitColumn == DigitColumn.THOUSANDS && arabicNumber > 3) {
+        throw new ReachMaxRomanNumberError((arabicNumber*DigitColumn.THOUSANDS).toString());
+    }
 
     // Should throw error if arabicNumber > 3999
     switch (arabicNumber) {
@@ -66,8 +77,13 @@ export function convertRomanNumberToArabic(romanNumberInput: string): number {
 export function convertArabicNumberToRoman(arabicNumber: number): string {
     let romanNumber: string = "";
 
-    for (let digitColumn = 1000; digitColumn >= 1 ; digitColumn /= 10) {
-        const arabicDigit = getSpecificDigitFromArabicNumber(arabicNumber,digitColumn);
+    if (arabicNumber > ROMAN_NOTATION_LIMIT) {
+        throw new ReachMaxRomanNumberError(arabicNumber.toString());
+    }
+
+    // Reverse to begin conversion with biggest digits
+    for (let digitColumn of [...digitColumnsValues].reverse()) {
+        const arabicDigit = getSpecificDigitFromArabicNumber(arabicNumber, digitColumn);
         romanNumber += getRomanNotationByDigitColumn(arabicDigit, digitColumn);
     }
 
